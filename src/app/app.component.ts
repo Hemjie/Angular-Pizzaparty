@@ -10,12 +10,7 @@ export class AppComponent {
   title = 'Pizza Party';
   name = '4 fromages';
   // maSuperPizza est "typée" avec la classe Pizza
-  maSuperPizza: Pizza = {
-    id: 1,
-    name: '4 fromages',
-    price: 12,
-    image: '4-fromages.jpg',
-  };
+  maSuperPizza: Pizza;
 
   // On peut typer un tableau
   mesPizzas: Pizza[] = [ //cette variable est un tableau d'objets Pizza
@@ -28,6 +23,9 @@ export class AppComponent {
   //on peut créer une fonction / méthode
   onSelect(pizza: Pizza) {  //possibilité de typer une fonction
     console.log(pizza);
+    //on va modifier la valeur de maSuperPizza
+    console.log(this); //this est pour AppComponent
+    this.maSuperPizza = pizza;
   }
 
 }
