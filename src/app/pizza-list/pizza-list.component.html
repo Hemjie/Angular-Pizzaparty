@@ -1,1 +1,6 @@
-<p>pizza-list works!</p>
+<h2>La liste des pizzas</h2>
+<ul>
+    <li *ngFor="let pizza of mesPizzas" (click)="onSelect(pizza)">
+        {{pizza.name}}
+    </li>
+</ul>
