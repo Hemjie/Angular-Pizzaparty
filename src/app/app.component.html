@@ -9,4 +9,11 @@
     <img [src]="'assets/img/pizzas/' + maSuperPizza.image" [alt]="'pizza ' + maSuperPizza.name">
 </div>
 
+<!-- ngModel permet de synchroniser la valeur du champ input avec la propriété name de l'objet maSuperPizza-->
 <input [(ngModel)]="maSuperPizza.name">
+<!-- le input précédent est un résumé pour le input suivant -->
+<!-- méthode sans le module FormsModule 
+     #pizzaName permet de sélectionner le input dans une variable pizzaName (document.getElementById)
+     [value] permet de réucper le résultat d'une variable (en JS)
+     (keyup) permet d'écouter un événement en JS  -->
+<input #pizzaName [value]="maSuperPizza.name" (keyup)="maSuperPizza.name = pizzaName.value">
