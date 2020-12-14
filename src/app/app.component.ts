@@ -16,4 +16,14 @@ export class AppComponent {
     price: 12,
     image: '4-fromages.jpg',
   };
+
+  // On peut typer un tableau
+  mesPizzas: Pizza[] = [ //cette variable est un tableau d'objets Pizza
+    {id: 1, name: 'Reine', price: 12, image: 'reine.jpg'},
+    {id: 2, name: '4 fromages', price: 13, image: '4-fromages.jpg'},
+    {id: 3, name: 'Orientale', price: 11, image: 'orientale.jpg'},
+    {id: 4, name: 'Cannibale', price: 9, image: 'cannibale.jpg'}
+  ];
+
 }
+
