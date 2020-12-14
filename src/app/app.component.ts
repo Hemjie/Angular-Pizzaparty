@@ -25,5 +25,10 @@ export class AppComponent {
     {id: 4, name: 'Cannibale', price: 9, image: 'cannibale.jpg'}
   ];
 
+  //on peut créer une fonction / méthode
+  onSelect(pizza: Pizza) {  //possibilité de typer une fonction
+    console.log(pizza);
+  }
+
 }
 
