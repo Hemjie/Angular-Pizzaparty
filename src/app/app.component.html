@@ -4,5 +4,7 @@
 <div>
     <p>ID: {{maSuperPizza.id}}</p>
     <p>Prix: {{maSuperPizza.price}}</p>
-    <img src="assets/img/pizzas/{{maSuperPizza.image}}" alt="pizza 4 fromages">
+
+    <!-- <img src="assets/img/pizzas/{{maSuperPizza.image}}" alt="pizza 4 fromages"> -->    
+    <img [src]="'assets/img/pizzas/' + maSuperPizza.image" [alt]="maSuperPizza.name">
 </div>
