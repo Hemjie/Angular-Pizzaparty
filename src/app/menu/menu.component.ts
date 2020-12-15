@@ -21,6 +21,8 @@ export class MenuComponent implements OnInit {
   // le title est défini comme un attribut HTML
   @Input() navTitle;
 
+  @Input() color = 'light';
+
   constructor() { }
 
   ngOnInit(): void {
