@@ -1,10 +1,36 @@
 # Pizzaparty
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+Petit projet pour découvrir Angular
 
-## Development server
+## Récupération du projet
+Pour récupérer, on utilise Git:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+cd c:\users\administrateur\code
+git clone https://github.com/Hemjie/pizzaparty.git
+```
+
+On n'oublie pas d'installer les dépendances du projet
+
+```
+cd pizzaparty
+npm install
+```
+
+Et voilà, on peut lancer le serveur (`http://)http://localhost:4200/`) :
+
+```
+ng serve
+```
+
+## Commandes utiles
+
+Pour générer un composant: 
+
+```
+ng generate component pizza-list
+```
+
 
 ## Code scaffolding
 
