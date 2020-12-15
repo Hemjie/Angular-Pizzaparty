@@ -23,6 +23,14 @@ export class MenuComponent implements OnInit {
 
   @Input() color = 'light';
 
+  changeTheme() {
+    if (this.color == "dark") {
+      this.color = "light"
+    } else {
+      this.color = "dark"
+    }
+  }
+
   constructor() { }
 
   ngOnInit(): void {
