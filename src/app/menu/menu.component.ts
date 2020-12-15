@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+//ne pas oublier ajout du input dans l'import
 
 @Component({
   selector: 'app-menu',
@@ -17,6 +18,8 @@ export class MenuComponent implements OnInit {
 
     //raccourci par rapport au if : this.isCollapsed = !this.isCollapsed
   };
+  // le title est défini comme un attribut HTML
+  @Input() navTitle;
 
   constructor() { }
 
