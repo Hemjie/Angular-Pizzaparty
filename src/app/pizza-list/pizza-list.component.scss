@@ -2,3 +2,7 @@
     //on agrandit l'élément x1.1
     transform: scale(1.1);
 }
+
+.card:hover {
+    cursor: pointer;
+}
