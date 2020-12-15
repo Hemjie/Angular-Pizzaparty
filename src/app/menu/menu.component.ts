@@ -7,13 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
   isCollapsed = false; 
-  
+
   toggleCollapseNavbar() {
     if (!this.isCollapsed) {
       this.isCollapsed = true;
     } else {
       this.isCollapsed = false;
     }
+
+    //raccourci par rapport au if : this.isCollapsed = !this.isCollapsed
   };
 
   constructor() { }
