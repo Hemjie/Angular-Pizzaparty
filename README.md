@@ -23,6 +23,14 @@ Et voilà, on peut lancer le serveur (`http://)http://localhost:4200/`) :
 ng serve
 ```
 
+Par la suite, s'il y a des modifications, on peut simplement faire:
+
+```
+cd pizzaparty
+git pull
+```
+
+
 ## Commandes utiles
 
 Pour générer un composant: 
