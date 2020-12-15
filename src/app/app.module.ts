@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { PizzaListComponent } from './pizza-list/pizza-list.component';
 import { MenuComponent } from './menu/menu.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,12 @@ import { MenuComponent } from './menu/menu.component';
   imports: [
     BrowserModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    RouterModule.forRoot([
+      //on définit toutes les routes (pages) du site
+      { path: '', component: PizzaListComponent },
+      { path: 'pizzas', component: PizzaListComponent },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
