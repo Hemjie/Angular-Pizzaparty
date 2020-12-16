@@ -13,6 +13,8 @@ export class PizzaAddComponent implements OnInit {
   pizza: Pizza = new Pizza();
   //propriété (chp, var) : type = Objet();
 
+  loading: boolean = false;
+
   constructor(
     private pizzaService: PizzaService,
     private router: Router
@@ -23,12 +25,18 @@ export class PizzaAddComponent implements OnInit {
 
   //création de la méthode qui s'exécute à l'écoute du ngSubmit du formulaire
   addPizza() { 
+    //on lance le chargement
+    this.loading = true;
+
     //on va appeler le service pour créer la pizza sur l'API
-    this.pizzaService.createPizza(this.pizza).then(pizza => {
+    this.pizzaService.createPizzaSlowly(this.pizza).then(pizza => {
       console.log(pizza);
       
       //redirection?
       this.router.navigate(['/pizzas']);
+
+      //on arrête le chargement
+      this.loading = false;
     })
   }
 

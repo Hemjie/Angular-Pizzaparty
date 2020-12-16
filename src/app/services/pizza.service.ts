@@ -42,4 +42,10 @@ export class PizzaService {
      return this.http.post<Pizza>('http://localhost:3000/pizzas', pizza).toPromise(); 
      //ne jamais oublier la promesse sur une requête API
    }
+
+   createPizzaSlowly(pizza: Pizza): Promise<Pizza> {
+     return new Promise(resolve => {
+       setTimeout(() => resolve(this.createPizza(pizza)), 2000);
+     })
+   }
 }

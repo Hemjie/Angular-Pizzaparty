@@ -35,6 +35,12 @@
       "price": "8",
       "image": "reine.jpg",
       "id": 7
+    },
+    {
+      "name": "Napolitaine",
+      "price": "11",
+      "image": "orientale.jpg",
+      "id": 8
     }
   ]
 }
