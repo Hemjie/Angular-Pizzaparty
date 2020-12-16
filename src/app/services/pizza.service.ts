@@ -26,7 +26,7 @@ export class PizzaService {
   // pour ralentir l'API, on simule une mauvaise connexion
   getPizzasSlowly():Promise<Pizza[]> {
     return new Promise(resolve => {
-      setTimeout(() => resolve(this.getPizzas()), 2000)
+      setTimeout(() => resolve(this.getPizzas()), 500)
     });
   }
 

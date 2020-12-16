@@ -13,7 +13,7 @@ export class PizzaListComponent implements OnInit {
   maSuperPizza: Pizza;
 
   // On peut typer un tableau
-  mesPizzas: Pizza[];
+  mesPizzas: Pizza[] = [];
 
   //on peut créer une fonction / méthode
   onSelect(pizza: Pizza) {  //possibilité de typer une fonction
