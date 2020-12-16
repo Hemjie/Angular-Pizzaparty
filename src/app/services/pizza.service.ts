@@ -23,6 +23,13 @@ export class PizzaService {
     return this.http.get<Pizza[]>('http://localhost:3000/pizzas').toPromise();
   }
 
+  // pour ralentir l'API, on simule une mauvaise connexion
+  getPizzasSlowly():Promise<Pizza[]> {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(this.getPizzas()), 2000)
+    });
+  }
+
   /**
    * Je vais créer une Pizza sur mon API
    */
@@ -30,7 +37,7 @@ export class PizzaService {
    createPizza(pizza: Pizza): Promise<Pizza> {
      // on envoie la pizza à l'API, et l'API nous promet de créer cette Pizza
      // si c'est le cas, elle nous renvoie la pizza avec son ID
-     
+
      // adresse http est celle de la requête API, pas celle du site
      return this.http.post<Pizza>('http://localhost:3000/pizzas', pizza).toPromise(); 
      //ne jamais oublier la promesse sur une requête API

@@ -41,8 +41,7 @@ export class PizzaListComponent implements OnInit {
     // on dit ensuite que mesPizzas correspond à ce tableau
 
     //la syntaxe avec => est un raccourci et cela permet de conserver le this (qui est donc PizzaListComponent)
-    this.pizzaService.getPizzas().then(pizzas => this.mesPizzas = pizzas);
+    this.pizzaService.getPizzasSlowly().then(pizzas => this.mesPizzas = pizzas);
   }
-
   
 }
