@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Pizza } from '../pizza';
 import { PizzaService } from '../services/pizza.service';
 
@@ -12,7 +13,10 @@ export class PizzaAddComponent implements OnInit {
   pizza: Pizza = new Pizza();
   //propriété (chp, var) : type = Objet();
 
-  constructor(private pizzaService: PizzaService) { }
+  constructor(
+    private pizzaService: PizzaService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
   }
@@ -20,7 +24,12 @@ export class PizzaAddComponent implements OnInit {
   //création de la méthode qui s'exécute à l'écoute du ngSubmit du formulaire
   addPizza() { 
     //on va appeler le service pour créer la pizza sur l'API
-    this.pizzaService.createPizza(this.pizza).then(pizza => console.log(pizza));
+    this.pizzaService.createPizza(this.pizza).then(pizza => {
+      console.log(pizza);
+      
+      //redirection?
+      this.router.navigate(['/pizzas']);
+    })
   }
 
 }

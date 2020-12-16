@@ -21,6 +21,7 @@ export class PizzaListComponent implements OnInit {
     //on va modifier la valeur de maSuperPizza
     console.log(this); //this est pour AppComponent
     this.maSuperPizza = pizza;
+    window.scrollTo(0,0);
   }
 
   //ceci est de l'injection de dépendance: on récupère l'instance d'une classe (PizzaService) dont dépend notre PizzaListComponent
