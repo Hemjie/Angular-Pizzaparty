@@ -31,13 +31,15 @@ export class PizzaListComponent implements OnInit {
   //ce code s'exécute quand le composant est initalisé (dans le DOM)après le constructeur
 
   ngOnInit(): void {
-    //let self = this;
+
     //je récupère les pizzas du service
-    /*this.pizzaService.getPizzas().then(function (pizzas) {
-      console.log(pizzas);
-      self.mesPizzas = pizzas;
-      console.log(self);
-    }); */
+
+    //avec une arrow fonction, on peut écrire du code plus concis
+    //on appelle la méthode getPizzas du service pizzaService qui nous renvoie une promesse
+    // suite à la résolution de la promesse (then), o na un tableau de pizza
+    // on dit ensuite que mesPizzas correspond à ce tableau
+
+    //la syntaxe avec => est un raccourci et cela permet de conserver le this (qui est donc PizzaListComponent)
     this.pizzaService.getPizzas().then(pizzas => this.mesPizzas = pizzas);
   }
 
