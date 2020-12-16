@@ -31,8 +31,14 @@ export class PizzaListComponent implements OnInit {
   //ce code s'exécute quand le composant est initalisé (dans le DOM)après le constructeur
 
   ngOnInit(): void {
+    //let self = this;
     //je récupère les pizzas du service
-    this.mesPizzas = this.pizzaService.getPizzas();
+    /*this.pizzaService.getPizzas().then(function (pizzas) {
+      console.log(pizzas);
+      self.mesPizzas = pizzas;
+      console.log(self);
+    }); */
+    this.pizzaService.getPizzas().then(pizzas => this.mesPizzas = pizzas);
   }
 
   
