@@ -2,7 +2,20 @@
     <div class="col-lg-6 offset-lg-3">
         <div class="card shadow">
             <div class="card-body">
-                Mon formulaire
+                <form (ngSubmit)="addPizza()"> <!-- écoute l'évenement submit et exécute la méthode addPizza du composant pizzaAddComponent -->
+                    <label for="name">Nom</label>
+                    <input type="text" name="name" id="name" class="form-control" [(ngModel)]="pizza.name"> <br />
+
+                    <label for="price">Prix</label>
+                    <input type="text" name="price" id="price" class="form-control" [(ngModel)]="pizza.price"> <br />
+
+                    <label for="image">Image</label>
+                    <input type="text" name="image" id="image" class="form-control" [(ngModel)]="pizza.image"> <br />
+
+                    <div class="text-right">                        
+                        <button class="btn btn-success">Créer la pizza</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
