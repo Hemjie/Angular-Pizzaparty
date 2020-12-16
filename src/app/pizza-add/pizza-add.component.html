@@ -2,18 +2,22 @@
     <div class="col-lg-6 offset-lg-3">
         <div class="card shadow">
             <div class="card-body">
-                <form (ngSubmit)="addPizza()"> <!-- écoute l'évenement submit et exécute la méthode addPizza du composant pizzaAddComponent -->
+                <form (ngSubmit)="addPizza()" #errorPizza="ngForm"> <!-- écoute l'évenement submit et exécute la méthode addPizza du composant pizzaAddComponent -->
+                    <!--ngForm vérifie validité de tous les champs du formulaire -->
                     <label for="name">Nom</label>
-                    <input type="text" name="name" id="name" class="form-control" [(ngModel)]="pizza.name"> <br />
+                    <input type="text" name="name" id="name" class="form-control" [(ngModel)]="pizza.name" required minlength="3" #errorName="ngModel"> <br /> <!-- required: vérifie si une valeur est entrée, minlength: nombre de caractères mini -->
+                    <!-- #name=ngModel permet de récupérer toutes les obligations -->
+                    <div *ngIf="errorName.dirty && errorName.invalid" class="text-danger">Le nom est vide ou fait moins de 3 caractères</div> <!-- .dirty: élément touché (modifié), .invalid: élément qui ne remplit pas toutes les obligations -->
+                    <div *ngIf="errorName.dirty && errorName.hasError('minlength')" class="text-danger">Le nom doit faire 3 caractères</div> <!-- .hasError('obligation'): élément qui ne remplit pas une obligation -->
 
                     <label for="price">Prix</label>
-                    <input type="text" name="price" id="price" class="form-control" [(ngModel)]="pizza.price"> <br />
+                    <input type="text" name="price" id="price" class="form-control" [(ngModel)]="pizza.price" required #price="ngModel"> <br /> 
 
                     <label for="image">Image</label>
-                    <input type="text" name="image" id="image" class="form-control" [(ngModel)]="pizza.image"> <br />
+                    <input type="text" name="image" id="image" class="form-control" [(ngModel)]="pizza.image" required #image="ngModel"> <br />
 
                     <div class="text-right">                        
-                        <button class="btn btn-success">Créer la pizza</button>
+                        <button class="btn btn-success" [disabled]="errorPizza.invalid">Créer la pizza</button> <!-- Bouton désactivé tant que le formulaire entier n'est pas valide -->
                     </div>
                 </form>
             </div>
