@@ -22,4 +22,17 @@ export class PizzaService {
     //le typage du get est nécessaire pour que la requête fonctionne et évite Promise<any>
     return this.http.get<Pizza[]>('http://localhost:3000/pizzas').toPromise();
   }
+
+  /**
+   * Je vais créer une Pizza sur mon API
+   */
+
+   createPizza(pizza: Pizza): Promise<Pizza> {
+     // on envoie la pizza à l'API, et l'API nous promet de créer cette Pizza
+     // si c'est le cas, elle nous renvoie la pizza avec son ID
+     
+     // adresse http est celle de la requête API, pas celle du site
+     return this.http.post<Pizza>('http://localhost:3000/pizzas', pizza).toPromise(); 
+     //ne jamais oublier la promesse sur une requête API
+   }
 }

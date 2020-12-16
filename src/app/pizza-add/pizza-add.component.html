@@ -11,10 +11,12 @@
                     <div *ngIf="errorName.dirty && errorName.hasError('minlength')" class="text-danger">Le nom doit faire 3 caractères</div> <!-- .hasError('obligation'): élément qui ne remplit pas une obligation -->
 
                     <label for="price">Prix</label>
-                    <input type="text" name="price" id="price" class="form-control" [(ngModel)]="pizza.price" required #price="ngModel"> <br /> 
+                    <input type="text" name="price" id="price" class="form-control" [(ngModel)]="pizza.price" required min="1" max="999" #errorPrice="ngModel"> <br /> 
+                    <div *ngIf="errorPrice.dirty && errorPrice.invalid" class="text-danger">Le prix est obligatoire</div>
 
                     <label for="image">Image</label>
-                    <input type="text" name="image" id="image" class="form-control" [(ngModel)]="pizza.image" required #image="ngModel"> <br />
+                    <input type="text" name="image" id="image" class="form-control" [(ngModel)]="pizza.image" required #errorImage="ngModel"> <br />
+                    <div *ngIf="errorImage.dirty && errorImage.invalid" class="text-danger">L'image est obligatoire</div>
 
                     <div class="text-right">                        
                         <button class="btn btn-success" [disabled]="errorPizza.invalid">Créer la pizza</button> <!-- Bouton désactivé tant que le formulaire entier n'est pas valide -->
