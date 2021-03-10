@@ -2,6 +2,8 @@
 
 Petit projet pour découvrir Angular
 
+![angular-pizzaparty](/maquette-pizzaparty.png)
+
 ## Récupération du projet
 Pour récupérer, on utilise Git:
 
